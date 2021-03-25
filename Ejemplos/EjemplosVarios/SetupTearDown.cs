@@ -1,10 +1,10 @@
 using System;
 using NUnit.Framework;
 
-namespace Dominio.Tests
+namespace EjemplosVarios
 {
     [TestFixture]
-    public class ExampleTest
+    public class SetupTearDown
     {
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -19,6 +19,7 @@ namespace Dominio.Tests
         }
 
         [Test]
+        [Category("Ejemplos")]
         public void Test1()
         {
             Console.WriteLine("Test1");
@@ -29,6 +30,7 @@ namespace Dominio.Tests
         {
             Console.WriteLine("Test2");
         }
+
         [TearDown]
         public void TearDown()
         {

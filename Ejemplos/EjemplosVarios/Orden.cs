@@ -1,12 +1,13 @@
 using System;
 using NUnit.Framework;
 
-namespace Dominio.Tests
+namespace EjemplosVarios
 {
     [TestFixture]
-    public class OrdenTest
+    public class Orden
     {
         [Test, Order(2)]
+        [Category("Ejemplos")]
         public void Test1()
         {
             Console.WriteLine("Test1");
