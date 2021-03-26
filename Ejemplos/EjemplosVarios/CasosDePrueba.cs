@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace EjemplosVarios
@@ -7,29 +8,32 @@ namespace EjemplosVarios
     public class CasosDePrueba
     {
         [Test]
-        public void SortOrdenaElementos()
+        [TestCase(new int[] {3, 1, 2})]
+        [TestCase(new int[] {1, 2, 3})]
+        [TestCase(new int[] {7, 5, 1})]
+        public void SortOrdenaElementos(int[] elementos)
         {
-            var arr = new List<int>(new int[] {3, 1, 2});
-            arr.Sort();
-            for (var i = 0; i < arr.Count - 1; i++)
+            var list = new List<int>(elementos);
+
+            list.Sort();
+
+            for (var i = 0; i < list.Count - 1; i++)
             {
-                Assert.LessOrEqual(arr[i], arr[i+1]);
+                Assert.LessOrEqual(list[i], list[i+1]);
             }
         }
 
         [Test]
-        [TestCase(new int[] {3, 1, 2})]
-        [TestCase(new int[] {1, 2, 3, 4, 5})]
-        [TestCase(new int[] {3, 5,37, 51, 1, 2})]
-        public void SortOrdenaElementos(int[] elementos)
+        [TestCase(new int[] {3, 1, 2}, 3)]
+        [TestCase(new int[] {1, 2, 3}, 3)]
+        [TestCase(new int[] {7, 5, 1}, 7)]
+        public void SortOrdenaElementos(int[] elementos, int ultimo)
         {
-            var arr = new List<int>(elementos);
-            arr.Sort();
-            for (var i = 0; i < arr.Count - 1; i++)
-            {
-                Assert.LessOrEqual(arr[i], arr[i+1]);
-            }
-        }
+            var list = new List<int>(elementos);
 
+            list.Sort();
+
+            Assert.AreEqual(ultimo, list[^1]);
+        }
     }
 }
