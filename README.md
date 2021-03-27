@@ -5,4 +5,4 @@ Fundamentos de Unit Testing con netCore y NUnit
 
 Este repositorio contiene el código de los ejemplos y ejercicios de mi curso de Fundamentos de Unit Testing con netCore y Nunit.
 
-Por feedback y consultas me pueden contactar via twitter como @inicopaez.
+Por feedback y consultas me pueden contactar via twitter @inicopaez.
